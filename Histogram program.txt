@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+FILE *file;
+for(int a=5; a>=1; a--){    //histrogram code start
+printf("%d", a);
+if(a == 5){
+for(int j = 1; j <=5; j++){
+ printf(" "); }
+ }
+ printf(" * \n");
+ }
+ for(int i = 0; i <=5; i++){
+ printf("%d |",i); }                             //histrogram end
+char filename[1024];
+printf("enter file");
+scanf("%s", filename);
+file = fopen("first.txt","r");
+if (file == NULL){
+printf("error openin file.\n");}
+int current_line=1;
+char c;
+do{
+c =fgetc(file);
+if (c == '\n' )current_line++;}
+while (c!=EOF);
+fclose(file);
+printf("Lines:%d\n",current_line);
+getch();
+}
